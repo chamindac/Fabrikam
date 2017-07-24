@@ -27,7 +27,10 @@
                 <tr>
                     <td>@summary.Employee.FullName</td>
                     <td>@summary.AssignedTickets</td>
-                    <td>@Model.GetCustomerSummary(summary.CurrentCustomer)</td>
+                    @if (summary.AssignedTickets > 0)
+                    {
+                        <td>@Model.GetCustomerSummary(summary.CurrentCustomer)</td>
+                    }
                 </tr>
             }
 

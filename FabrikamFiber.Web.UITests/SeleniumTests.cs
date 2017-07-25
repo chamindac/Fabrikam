@@ -36,7 +36,7 @@ namespace FabrikamFiber.Web.UiTests_v14
             {
                 // Inicia a navegação
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-                driver.Navigate().GoToUrl("http://intranet.fabrikam.com");
+                driver.Navigate().GoToUrl("http://localhost:16535/");
 
                 // Preenche formulário
                 driver.FindElement(By.CssSelector("a[href='/Customers']")).Click();

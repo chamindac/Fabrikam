@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="FabrikamCreateTicket" Id="d3b4f388-ff2b-4d3c-a2f2-ab73a46bb875" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.76c3cfe3-1fac-45fb-ae9c-a9c79a05cf4b.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="4f636fb6-64e0-4511-9f9e-abfa369d95df" Version="1.1" Url="http://fabrikam.eastus.cloudapp.azure.com/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False" />
+    <Request Method="GET" Guid="4a344c56-8e99-49e3-a32f-591c08feec5f" Version="1.1" Url="http://fabrikam.eastus.cloudapp.azure.com/ServiceTickets" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://fabrikam.eastus.cloudapp.azure.com/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="d3bead7f-e56c-45a5-91a2-4f3c3f043755" Version="1.1" Url="http://fabrikam.eastus.cloudapp.azure.com/ServiceTickets/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://fabrikam.eastus.cloudapp.azure.com/ServiceTickets" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.EscalationLevel" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Lev" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.CustomerID" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="-id=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="3" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="4e184fc8-b783-4fa2-ac99-e56b57ead990" Version="1.1" Url="http://fabrikam.eastus.cloudapp.azure.com/ServiceTickets/Create" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://fabrikam.eastus.cloudapp.azure.com/ServiceTickets/Create" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Title" Value="Demo Ticket 1" RecordedValue="Demo Ticket 1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EscalationLevel" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam1.EscalationLevel}}" UrlEncode="True" />
+        <FormPostParameter Name="Description" Value="Demo Ticket 1" RecordedValue="Demo Ticket 1" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Opened" Value="{{$HIDDEN1.Opened}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CreatedByID" Value="{{$HIDDEN1.CreatedByID}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="AssignedToID" Value="{{$HIDDEN1.AssignedToID}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="StatusValue" Value="{{$HIDDEN1.StatusValue}}" RecordedValue="0" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="CustomerID" Value="4" RecordedValue="4" CorrelationBinding="{{FormPostParam2.CustomerID}}" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="28f26803-e60a-48aa-bcf7-6d40bc84779a" Version="1.1" Url="http://fabrikam.eastus.cloudapp.azure.com/ServiceTickets/GetLogEntries/10" ThinkTime="12" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://fabrikam.eastus.cloudapp.azure.com/ServiceTickets/Details/10" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="9ffe9963-e139-4bda-8300-97d32cd75671" Version="1.1" Url="http://fabrikam.eastus.cloudapp.azure.com/ServiceTickets" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://fabrikam.eastus.cloudapp.azure.com/ServiceTickets/Details/10" />
+      </Headers>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

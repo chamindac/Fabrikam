@@ -18,6 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabrikamFiber.Web.WebTests"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E3CDD15-F324-4BDF-A273-9AFC06AFA4E4}"
 	ProjectSection(SolutionItems) = preProject
+		Cloud.testsettings = Cloud.testsettings
 		Local.testsettings = Local.testsettings
 	EndProjectSection
 EndProject
